@@ -1,4 +1,4 @@
-# Customer Churn Analysis - Tensforflow model to ONNX
+# Customer Churn Analysis - Tensorflow model to ONNX
 
 ## Pre-requirements
 
