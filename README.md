@@ -2,8 +2,8 @@
 
 ## Pre-requirements
 
-- conda CLI
-- Apple MacBook with Apple Silicon:
+- Conda CLI. As an option, use [Miniforge installer](https://conda-forge.org/download/)
+- Apple MacBook with Apple Silicon
 
 ## Run
 
