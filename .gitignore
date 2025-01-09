@@ -3,3 +3,6 @@ ann
 models
 .DS_Store
 saved_model
+.bsp
+.metals
+.scala-build
