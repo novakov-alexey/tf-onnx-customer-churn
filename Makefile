@@ -1,6 +1,6 @@
 create-env:
-	conda create --prefix ./env python=3.8 
-	conda activate ./env
+	conda create --prefix ./ann python=3.8 
+	conda activate ./ann
 
 install:
 	conda install -c apple -c conda-forge -c nodefaults tensorflow-deps	

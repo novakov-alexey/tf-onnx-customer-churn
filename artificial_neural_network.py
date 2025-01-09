@@ -129,4 +129,10 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"accuracy: {accuracy}")
 
 ann.summary()
-# ann.save('saved_model/ann-customer-churn')
+ann.save('saved_model/ann-customer-churn')
+
+# last_10 = X_test[-10:, :]
+# y_pred_10 = ann.predict(last_10)
+# y_pred_10 = (y_pred_10 > 0.5)
+# print(last_10)
+# print(y_pred_10)
