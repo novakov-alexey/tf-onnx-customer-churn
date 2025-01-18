@@ -31,8 +31,6 @@ X = np.array(ct.fit_transform(X))
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
-len(X_train)
-
 """### Feature Scaling"""
 
 from sklearn.preprocessing import StandardScaler
@@ -69,8 +67,8 @@ ann.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accura
 """### Training the ANN on the Training set"""
 import time
 start = time.process_time()
-ann.fit(X_train, y_train, batch_size = 32, epochs = 100)
-# ann = tf.keras.models.load_model('saved_model/ann-customer-churn')
+# ann.fit(X_train, y_train, batch_size = 32, epochs = 100)
+ann = tf.keras.models.load_model('saved_model/ann-customer-churn.keras')
 end = time.process_time() - start
 print(f"training time = {end} sec")
 
@@ -97,8 +95,7 @@ So, should we say goodbye to that customer?
 
 **Solution**
 """
-
-transformedRow = sc.transform([[0, 1, 0, 46, 0, 46,7,137145.12,1,1,0,115146.4]])
+transformedRow = sc.transform([[1, 0, 0, 600, 1, 40, 3, 60000, 2, 1, 1, 50000]])
 print(f"transformedRow: {transformedRow}")
 print(f"Exited?: {ann.predict(transformedRow) > 0.5}")
 print(f"Predicted: {ann.predict(transformedRow)}")
@@ -129,10 +126,4 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"accuracy: {accuracy}")
 
 ann.summary()
-ann.save('saved_model/ann-customer-churn')
-
-# last_10 = X_test[-10:, :]
-# y_pred_10 = ann.predict(last_10)
-# y_pred_10 = (y_pred_10 > 0.5)
-# print(last_10)
-# print(y_pred_10)
+#ann.save('saved_model/ann-customer-churn.keras')
